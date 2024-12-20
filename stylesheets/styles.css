@@ -1,0 +1,288 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* import jeopardy fonts */
+
+@font-face {
+  font-family: "Swiss";
+  src: url(../fonts/Swiss_921_Regular.otf);
+}
+
+@font-face {
+  font-family: "ITC Korinna";
+  src: url(../fonts/ITC_Korinna_Regular.otf);
+}
+
+@font-face {
+  font-family: "ITC Korinna";
+  src: url(../fonts/ITC_Korinna_Bold.otf);
+  font-weight: bold;
+}
+
+/* center title image */
+
+.title img {
+  display: block;
+  margin: auto;
+  height: 25%;
+  width: 25%;
+  object-fit: contain;
+}
+
+/* center headers, h1s, h2s of each slide */
+h1,
+h2 {
+  margin: 2vh 5vw;
+  text-align: center;
+  border: solid 1px black;
+  background-color: lightslategray;
+  font-family: "ITC Korinna", "Swiss", "Trebuchet MS", sans-serif;
+}
+
+#play {
+  display: block;
+  position: relative;
+  font-family: "Swiss", "ITC Korinna", "Trebuchet MS", sans-serif;
+  background-color: #62181e;
+  color: whitesmoke;
+  padding: 20px;
+  width: 200px;
+  opacity: 1;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 20px auto;
+}
+
+a #play:link {
+  color: whitesmoke;
+}
+
+#play:hover {
+  opacity: 0.8;
+  color: white;
+}
+
+.wrapper {
+  margin: 5vh 8vw;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0.5rem;
+  border: solid 0.5rem black;
+  background-color: black;
+}
+
+.category {
+  padding: 5% 10%;
+  font-family: "ITC Korinna", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-weight: bold;
+  text-shadow: 0.2rem 0.2rem black;
+  text-align: center;
+  color: whitesmoke;
+  background-color: #060ce9;
+}
+
+.box {
+  padding: 5% 10%;
+  font-family: "Swiss", "Trebuchet MS", sans-serif;
+  font-size: 175%;
+  font-weight: bold;
+  text-shadow: 0.2rem 0.2rem black;
+  text-align: center;
+  background-color: #060ce9;
+  color: #ffcc00;
+}
+
+.wrapper .box:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+/* center buttons, inputs, scores */
+
+.input {
+  display: grid;
+  place-items: center;
+  margin: 2vh;
+}
+
+.input .answer {
+  width: 45%;
+  text-align: center;
+}
+
+.buttons {
+  display: block;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.guess,
+.pass,
+.bet {
+  font-family: "Swiss", "ITC Korinna", "Trebuchet MS", sans-serif;
+  padding: 20px;
+  width: 200px;
+  opacity: 1;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 3vw;
+  color: whitesmoke;
+  display: inline;
+}
+
+.guess {
+  background-color: blue;
+  position: absolute;
+  right: 50%;
+}
+
+.pass {
+  background-color: red;
+  position: absolute;
+  left: 50%;
+}
+
+/* format final jeopardy bet button */
+
+.betButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bet {
+  color: #0e4176;
+  background-color: #c1bfc0;
+}
+
+.guess:hover,
+.pass:hover,
+.bet:hover {
+  opacity: 0.6;
+}
+
+.score {
+  margin: auto 5vw;
+  padding: 0.5rem;
+  font-family: "ITC Korinna", "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.playerOne {
+  display: block;
+  text-align: left;
+}
+
+.playerTwo {
+  display: block;
+  text-align: right;
+}
+
+/* format universal next round button */
+
+.nextRound {
+  margin-top: 8vh;
+  margin-left: auto;
+  margin-right: 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Swiss", "Trebuchet MS", sans-serif;
+  padding: 20px;
+  width: 200px;
+  opacity: 1;
+  transition: all 0.3s;
+  cursor: pointer;
+  color: whitesmoke;
+  background-color: green;
+}
+
+.nextRound:hover {
+  opacity: 0.6;
+}
+
+/* center final jeopardy header */
+
+h3 {
+  margin: 2vh 5vw;
+  text-align: center;
+  font-family: "ITC Korinna", "Swiss", "Trebuchet MS", sans-serif;
+  font-size: large;
+  color: #c1bfc0;
+}
+
+/* add image to center of final jeopardy */
+
+.final-jeopardy {
+  margin: auto auto 15px auto;
+  padding: 10px;
+  justify-content: center;
+  border: solid 3px #c1bfc0;
+  height: 200px;
+  width: 50%;
+}
+
+.final-jeopardy p {
+  margin: auto;
+  font-family: "ITC Korinna", "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #c1bfc0;
+  padding: 70px;
+}
+
+/* stack inputs and bet button */
+
+.button:hover {
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+/* format universal footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  align-items: center;
+  font-family: "ITC Korinna", "Swiss", "Trebuchet MS", sans-serif;
+  text-align: center;
+  border: solid 1px black;
+  background-color: lightslategray;
+}
+
+/* CELL PHONE MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .nextRound {
+    left: 25%;
+  }
+}
+
+/* HORIZONTAL PHONE MEDIA QUERIES */
+
+/* TABLET MEDIA QUERIES */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .nextRound {
+    left: 25%;
+  }
+}
+
+/* LAPTOP MEDIA QUERIES */
+
+/* DESKTOP MEDIA QUERIES */
